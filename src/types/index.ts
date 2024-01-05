@@ -14,21 +14,7 @@ export type ChildrenProps = {
   children: ReactNode;
 };
 
-export type IToken = {
-  accessToken: string;
-  refreshToken?: string;
-};
-
-export interface CurrentUserProps {
-  currentUser?: {
-    createdAt: string;
-    updatedAt: string;
-    emailVerified: string | null;
-    id: string;
-    name: string | null;
-    email: string | null;
-    image: string | null;
-    password: string | null;
-    isAdmin: boolean;
-  } | null;
+export type SearchParamProps = {
+  params: { id: string }
+  searchParams: { [key: string]: string | string[] | undefined }
 }
