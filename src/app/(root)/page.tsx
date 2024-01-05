@@ -44,7 +44,7 @@ export default async function Home() {
           <CategoryFilter /> */}
         </div>
 
-        {/* <Collection 
+        {/* <Collection
           data={events?.data}
           emptyTitle="No Events Found"
           emptyStateSubtext="Come back later"
