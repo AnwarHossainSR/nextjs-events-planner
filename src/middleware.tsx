@@ -1,18 +1,21 @@
-import type { NextRequest } from 'next/server';
-import { NextResponse } from 'next/server';
-
-export default async function middleware(req: NextRequest) {
-  // const accessToken = req.cookies.get('accessToken')?.value;
-  // console.log('accessToken', accessToken);zz
-
-  const authUser = true;
-
-  if (!authUser)
-    return NextResponse.redirect(new URL('/unauthorized', req.url), req);
-
-  return NextResponse.next();
-}
-
+import { authMiddleware } from "@clerk/nextjs";
+ 
+export default authMiddleware({
+  publicRoutes: [
+    '/',
+    '/events/:id',
+    '/api/webhook/clerk',
+    '/api/webhook/stripe',
+    '/api/uploadthing'
+  ],
+  ignoredRoutes: [
+    '/api/webhook/clerk',
+    '/api/webhook/stripe',
+    '/api/uploadthing'
+  ]
+});
+ 
 export const config = {
-  matcher: ['/dashboard', '/dashboard/:path*'],
+  matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
 };
+ 
