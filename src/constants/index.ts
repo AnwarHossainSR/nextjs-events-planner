@@ -11,7 +11,7 @@ export const headerLinks = [
     label: 'My Profile',
     route: '/profile',
   },
-]
+];
 
 export const eventDefaultValues = {
   title: '',
@@ -24,4 +24,4 @@ export const eventDefaultValues = {
   price: '',
   isFree: false,
   url: '',
-}
+};
