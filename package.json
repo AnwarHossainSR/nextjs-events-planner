@@ -4,9 +4,6 @@
   "author": "Anwar Hossain",
   "license": "MIT",
   "private": true,
-  "engines": {
-    "node": ">=20.0.0"
-  },
   "scripts": {
     "dev": "next dev",
     "devt": "next dev --turbo",
